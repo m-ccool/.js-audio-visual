@@ -1,0 +1,428 @@
+html {
+  /*background-color: #f0f39c;*/
+  box-sizing: border-box;
+}
+
+.player {
+  display: flex!important;
+  -webkit-transition: all 250ms ease-in-out;
+  -moz-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  color: #ffffff;
+  /*font-family: "Raleway", sans-serif;*/
+  height: 300px;
+  line-height: 1.2;
+  margin: 50px auto;
+  position: relative;
+  width: 300px;
+}
+
+.player:after {
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+  -webkit-transition: all 250ms ease-in-out;
+  -moz-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  background: #777;
+  bottom: 12px;
+  box-shadow: 0 15px 23px rgba(0, 0, 0, 0.3);
+  content: "";
+  height: 10px;
+  left: 2%;
+  opacity: 0;
+  padding-left: 5%;
+  position: absolute;
+  width: 96%;
+  z-index: 5;
+}
+
+.player .player__content {
+  background-color: #000000;
+  height: 100%;
+  padding: 100px 0 0 20px;
+  position: relative;
+  text-align: right;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 20x 20px 0 #000000;
+}
+
+.player .player__artist {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+.player .player__album {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  width: 200px;
+}
+
+.player .player__track {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  width: 200px;
+}
+
+.player .player__track:before, .player .player__track:after {
+  content: '"';
+  font-size: 22px;
+  vertical-align: middle;
+}
+
+.player--open {
+  /*margin-left: -5rem!important;*/
+  border-radius: 2px;
+  height: 370px;
+  position: relative;
+  width: 460px;
+}
+
+.player--open:after {
+  /*opacity: 1;*/
+}
+
+.player__controls {
+  bottom: 45px;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  white-space: nowrap;
+  width: 250px;
+}
+
+.player__controls-item {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+  height: 26px;
+  margin: 0 8.6666666667px;
+  position: relative;
+  width: 26px;
+}
+
+.player__controls-item--play {
+  overflow: hidden;
+}
+
+.player__controls-item--play .rectangle, .player__controls-item--play .triangle {
+  height: 26px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 26px;
+}
+
+.player__controls-item--play .rectangle {
+  z-index: 5;
+}
+
+.player__controls-item--play .rectangle:before, .player__controls-item--play .rectangle:after {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: #0e0e0e;
+  content: "";
+  height: 100%;
+  width: 50%;
+}
+
+.player--playing .player__controls-item--play .rectangle:before, .player--playing .player__controls-item--play .rectangle:after {
+  width: 36%;
+}
+
+.player__controls-item--play .rectangle:before {
+  float: left;
+  overflow: hidden;
+}
+
+.player__controls-item--play .rectangle:after {
+  float: right;
+}
+
+.player__controls-item--play .triangle {
+  z-index: 10;
+}
+
+.player__controls-item--play .triangle:before, .player__controls-item--play .triangle:after {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  border-bottom: 13px solid transparent;
+  border-right: 26px solid #000000;
+  border-top: 13px solid transparent;
+  content: "";
+  height: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+}
+
+.player__controls-item--play .triangle:before {
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.player--playing .player__controls-item--play .triangle:before {
+  -webkit-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  -o-transform: translate(0, -100%);
+  transform: translate(0, -100%);
+}
+
+.player__controls-item--play .triangle:after {
+  -webkit-transform: translate(0, 50%);
+  -moz-transform: translate(0, 50%);
+  -ms-transform: translate(0, 50%);
+  -o-transform: translate(0, 50%);
+  transform: translate(0, 50%);
+}
+
+.player--playing .player__controls-item--play .triangle:after {
+  -webkit-transform: translate(0, 100%);
+  -moz-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  -o-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+}
+
+.player__controls-item--play:hover .rectangle:before, .player__controls-item--play:hover .rectangle:after {
+  background-color: rgba(255,255,255,0.5);
+}
+
+.player__controls-item--next, .player__controls-item--prev {
+  width: 45px;
+}
+
+.player__controls-item--next:before, .player__controls-item--next:after, .player__controls-item--prev:before, .player__controls-item--prev:after {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-bottom: 13px solid transparent;
+  border-top: 13px solid transparent;
+  content: "";
+  height: 0;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+
+.player__controls-item--next {
+  width: 45px;
+}
+
+.player__controls-item--next:before, .player__controls-item--next:after {
+  border-left: 26px solid #0e0e0e;
+}
+
+.player__controls-item--next:before {
+  left: 0;
+}
+
+.player__controls-item--next:after {
+  left: 17.3333333333px;
+}
+
+.player__controls-item--next:hover:before, .player__controls-item--next:hover:after {
+  border-left-color: rgb(133,133,133);
+}
+
+.player__controls-item--prev:before, .player__controls-item--prev:after {
+  border-right: 26px solid #0e0e0e;
+}
+
+.player__controls-item--prev:before {
+  right: 0;
+}
+
+.player__controls-item--prev:after {
+  right: 17.3333333333px;
+}
+
+.player__controls-item--prev:hover:before, .player__controls-item--prev:hover:after {
+  border-right-color: rgb(133,133,133);
+}
+
+.album {
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 250ms ease-in-out;
+  -moz-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  height: 310px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 310px;
+  z-index: 100;
+}
+
+.player--open .album {
+  cursor: default;
+  right: -100px;
+}
+
+.album__cover {
+  background-color: #000;
+  background-size: cover;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 20;
+}
+
+.album:hover .vinyl {
+  left: 25%;
+}
+
+.album--billionaires-2014-compilation .album__cover, .album--billionaires-2014-compilation .vinyl .vinyl__center:before {
+  background-image: url("../../assets/img/Black_Sabbath_Paranoid.jpg");
+}
+
+.album--project-mayhem .album__cover, .album--project-mayhem .vinyl .vinyl__center:before {
+  background-image: url("../../assets/img/Black_Sabbath_Paranoid.jpg");
+}
+
+.album--boxer .album__cover, .album--boxer .vinyl .vinyl__center:before {
+  background-image: url("../../assets/img/Black_Sabbath_Paranoid.jpg");
+}
+
+.vinyl {
+  -webkit-transition: all 250ms ease-in-out;
+  -moz-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  left: 10px;
+  position: absolute;
+  top: 10px;
+  height: 290px;
+  width: 290px;
+}
+
+.player--open .vinyl {
+  left: 0 !important;
+}
+
+.player--playing .vinyl {
+  left: 50% !important;
+}
+
+.vinyl__shadow, .vinyl__circle {
+  border-radius: 100%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.vinyl__shadow {
+  box-shadow: 2px 10px 20px 0 rgba(0, 0, 0, 0.9);
+  z-index: 5;
+}
+
+.vinyl__circle {
+  -webkit-animation: rotate 1s linear infinite both paused;
+  -moz-animation: rotate 1s linear infinite both paused;
+  animation: rotate 1s linear infinite both paused;
+  background-color: #161616;
+  z-index: 10;
+}
+
+.player--playing .vinyl__circle {
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  animation-play-state: running;
+}
+
+.vinyl__center {
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #212121;
+  border-radius: 100%;
+  height: 146px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  width: 146px;
+}
+
+.vinyl__center:before, .vinyl__center:after {
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+.vinyl__center:before {
+  background-color: #ed7167;
+  background-size: cover;
+  height: 116px;
+  width: 116px;
+  z-index: 5;
+}
+
+.vinyl__center:after {
+  background-color: #fff;
+  height: 40px;
+  width: 40px;
+  z-index: 10;
+}
+
+.has-fade-in {
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  opacity: 0;
+}
+
+.player--open .has-fade-in {
+  opacity: 1;
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Infinite Road</title>
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="assets/img/infinity-icon.svg">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="assets/img/infinity-icon.svg">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="assets/img/infinity-icon.svg">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="assets/img/infinity-icon.svg">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="assets/img/infinity-icon.svg">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Alegreya%20SC.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="assets/css/Hero-Features-icons.css">
+    <link rel="stylesheet" href="assets/css/musicPlayer.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/visualizer.css">
+</head>
+
+<body style="overflow: x-hidden;--bs-primary: #ffffff;--bs-primary-rgb: 255,255,255;">
+
+    <!-- start/ nav -->
+    <nav class="navbar navbar-light navbar-expand-md sticky-top d-flex justify-content-sm-center hide" data-bs-spy="scroll">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#"><span style="color: rgba(255,255,255,0.9);">Infinite Road</span></a>
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-4">
+                <span class="visually-hidden">Toggle navigation</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="white" stroke-dasharray="24" stroke-dashoffset="24" stroke-linecap="round" stroke-width="2"><path d="M5 5H19"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.2s" values="24;0"/></path><path d="M5 12H19"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.2s" dur="0.2s" values="24;0"/></path><path d="M5 19H19"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.4s" dur="0.2s" values="24;0"/></path></g></svg>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-0 order-md-first" id="navcol-4">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active d-flex justify-content-center" href="#splash" style="margin: 0 1rem;">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex justify-content-center" href="#" style="color: #ffffff;">shows</a>
+                    </li>
+                    <li class="nav-item d-md-flex align-items-md-center">
+                        <a class="nav-link d-flex justify-content-center align-items-md-center" href="#footer" style="color: #ffffff;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
+                                <path d="M511.1 367.1c0 44.18-42.98 80-95.1 80s-95.1-35.82-95.1-79.1c0-44.18 42.98-79.1 95.1-79.1c11.28 0 21.95 1.92 32.01 4.898V148.1L192 224l-.0023 208.1C191.1 476.2 149 512 95.1 512S0 476.2 0 432c0-44.18 42.98-79.1 95.1-79.1c11.28 0 21.95 1.92 32 4.898V126.5c0-12.97 10.06-26.63 22.41-30.52l319.1-94.49C472.1 .6615 477.3 0 480 0c17.66 0 31.97 14.34 32 31.99L511.1 367.1z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-none d-md-block">
+                <a class="btn btn-primary" role="button" href="#shop" >Merch</a>
+                <a class="btn btn-primary" role="button" href="#footer" style="margin: 0 1rem;">Tickets</a>
+            </div>
+        </div>
+    </nav>
+    <!-- end/ nav -->
+
+    <!-- start/ div: audio visualizer -->
+    <div id="playMusicCard">
+        <div id="title">
+            <h1>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><rect width="2.8" height="12" x="1" y="6" fill="currentColor"><animate attributeName="y" begin="svgSpinnersBarsScaleMiddle0.begin+0.4s" calcMode="spline" dur="0.6s" keySplines=".14,.73,.34,1;.65,.26,.82,.45" values="6;1;6"/><animate attributeName="height" begin="svgSpinnersBarsScaleMiddle0.begin+0.4s" calcMode="spline" dur="0.6s" keySplines=".14,.73,.34,1;.65,.26,.82,.45" values="12;22;12"/></rect><rect width="2.8" height="12" x="5.8" y="6" fill="currentColor"><animate attributeName="y" begin="svgSpinnersBarsScaleMiddle0.begin+0.2s" calcMode="spline" dur="0.6s" keySplines=".14,.73,.34,1;.65,.26,.82,.45" values="6;1;6"/><animate attributeName="height" begin="svgSpinnersBarsScaleMiddle0.begin+0.2s" calcMode="spline" dur="0.6s" keySplines=".14,.73,.34,1;.65,.26,.82,.45" values="12;22;12"/></rect><rect width="2.8" height="12" x="10.6" y="6" fill="currentColor"><animate id="svgSpinnersBarsScaleMiddle0" attributeName="y" begin="0;svgSpinnersBarsScaleMiddle1.end-0.1s" calcMode="spline" dur="0.6s" keySplines=".14,.73,.34,1;.65,.26,.82,.45" values="6;1;6"/><animate attributeName="height" begin="0;svgSpinnersBarsScaleMiddle1.end-0.1s" calcMode="spline" dur="0.6s" keySplines=".14,.73,.34,1;.65,.26,.82,.45" values="12;22;12"/></rect><rect width="2.8" height="12" x="15.4" y="6" fill="currentColor"><animate attributeName="y" begin="svgSpinnersBarsScaleMiddle0.begin+0.2s" calcMode="spline" dur="0.6s" keySplines=".14,.73,.34,1;.65,.26,.82,.45" values="6;1;6"/><animate attributeName="height" begin="svgSpinnersBarsScaleMiddle0.begin+0.2s" calcMode="spline" dur="0.6s" keySplines=".14,.73,.34,1;.65,.26,.82,.45" values="12;22;12"/></rect><rect width="2.8" height="12" x="20.2" y="6" fill="currentColor"><animate id="svgSpinnersBarsScaleMiddle1" attributeName="y" begin="svgSpinnersBarsScaleMiddle0.begin+0.4s" calcMode="spline" dur="0.6s" keySplines=".14,.73,.34,1;.65,.26,.82,.45" values="6;1;6"/><animate attributeName="height" begin="svgSpinnersBarsScaleMiddle0.begin+0.4s" calcMode="spline" dur="0.6s" keySplines=".14,.73,.34,1;.65,.26,.82,.45" values="12;22;12"/></rect></svg>
+            </h1>
+            <h2>Visualizer</h2>
+        </div>
+
+        <div  onclick="startMusic()" id="playIcon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" fill-opacity="0" stroke="white" stroke-dasharray="36" stroke-dashoffset="36" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 6L18 12L8 18z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="36;0"/><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.5s" values="0;1"/></path></svg>
+        </div>
+
+        
+        <div onclick="pauseIcon()" id="pauseIcon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="white" stroke-dasharray="32" stroke-dashoffset="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 6h2v12h-2z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="32;0"/></path><path d="M15 6h2v12h-2z"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.4s" values="32;0"/></path></g></svg>
+        </div>
+    </div>
+
+    <canvas class="d-flex flex-fill justify-content-center" style="z-index: 100!important;" id='canvas'>
+    </canvas>
+    <!-- end/ div: audio visualizer -->
+
+    
+   
+    <!-- start/ section: splash -->
+    <section  class="d-flex flex-fill justify-content-center aos-init aos-animate" data-aos="fade" data-aos-duration="3000" data-aos-offset="-100px" data-aos-once="true" id="splash">     
+            <div style="margin-top: -100vh; padding-bottom: 1rem;"class="video-background-content container h-100">            
+                <div class=" mt-5 w-100 text-center align-items-center">
+                    <div  class="">
+                        <div id="logo"  data-aos="fade" data-aos-duration="3000">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 526 255.1"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;opacity:0.5;}.cls-2{fill:#fff;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M525.5,127.55a127,127,0,0,1-216.87,89.84l-1-1.13L180.85,73.16a76.22,76.22,0,1,0,0,108.78l6.52-7.37a25.44,25.44,0,0,1,38.12,33.69h0l-7.1,8-1,1.13a127,127,0,1,1,0-179.67l1,1.12,126.74,143.1a76.22,76.22,0,1,0,0-108.78l-6.52,7.37A25.43,25.43,0,0,1,300.5,46.84l7.09-8,1-1.12A127,127,0,0,1,525.5,127.55Z"/><path class="cls-2" d="M36.08,95v52.69L17.26,166.46V95Z"/><path class="cls-2" d="M58.66,121.3v26.34H39.84V95H58.66l7.53,7.53V95H85v71.51L66.19,147.64V128.82Z"/><path class="cls-2" d="M88.77,95H126.4V110H107.58v3.76H126.4v15H107.58v18.82L88.77,166.46Z"/><path class="cls-2" d="M149,95v52.69l-18.82,18.82V95Z"/><path class="cls-2" d="M171.56,121.3v26.34H152.75V95h18.81l7.53,7.53V95h18.82v71.51l-18.82-18.82V128.82Z"/><path class="cls-2" d="M220.49,95v52.69l-18.82,18.82V95Z"/><path class="cls-2" d="M250.6,110v37.63l-18.82,18.82V110h-7.53V95h48.93L258.12,110Z"/><path class="cls-2" d="M299.52,95V110H280.7v3.76h33.87l-15.05,15H280.7v3.77h18.82v15H276.94l-15.05-15V95Z"/><path class="cls-2" d="M341.22,136.35v11.29L322.4,166.46V95h45.16v37.64H360l15,15H352.51Zm7.53-18.82V110h-7.53v7.52Z"/><path class="cls-2" d="M371.33,147.64V95h45.16v52.69ZM390.15,110v22.58h7.52V110Z"/><path class="cls-2" d="M420.25,121.3l45.17-45.16v71.5H446.6V121.3l-11.29,11.29h7.52v15H420.25Z"/><path class="cls-2" d="M514.34,121.3v26.34H491.76v-15h7.53L488,121.3v26.34H469.18V76.14Z"/></g></g></svg>
+                        </div>
+                        <!--<h1 style=" margin-top: 15rem;" class="title display-4">Infinite Road</h1>-->
+                        <p class="lead mb-0">muses of the journey</p>
+                        <p class="lead" style="opacity: .5; letter-spacing: .2rem; margin: 2rem; font-size:.75rem!important;">developer <a href="https://doxxus.com" class="text-white">
+                            <u><b>DOXXUS</b></u></a> 
+                        </p>
+                    </div>                       
+                    <a class="btn btn-primary" role="button" href="https://www.youtube.com/watch?v=0qanF-91aJo&ab_channel=BlackSabbath&themeRefresh=1" style="letter-spacing: .2rem; margin: 2rem 5rem 1rem;border-color: #f8f9fa;background: var(--bs-btn-border-color);color: var(--bs-btn-active-color);">listen now</a>
+                 </div>
+            </div>   
+    
+        <script type="text/javascript" src="visualizer.js"></script>
+        <script  src="./visualizer.js"></script>
+    </section>
+    <!-- end/ section: splash -->
+    
+    <!-- start/ section: music video -->
+    <section style="overflow-x: hidden!important;" class="d-flex flex-fill justify-content-center aos-init aos-animate" data-aos="fade" data-aos-duration="3000" data-aos-offset="-100px" data-aos-once="true" id="music_video">
+        
+        <div class="video-background-holder" style="padding: 2rem!important; margin: 0 2vw!important;">
+        <div class="w-100 video-background-overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+              <source src="https://doxxus.com/infinityroad/concert.mp4" type="video/mp4">
+          </video>
+        <div style="padding-bottom: 1rem;"class="w-100 video-background-content container h-100">
+         
+    
+    </section>
+    <!-- end/ section: music video -->
+    
+    <section id="about"></section>
+
+    <!-- start/ section: shop -->
+    <section class="d-md-flex justify-content-md-center align-items-md-center" id="shop" style="padding-top: 5rem;">
+        <div data-aos="fade" data-aos-duration="3000" style="padding: 0 calc(2rem + 5vw);max-width: 75rem;">
+            <h2 class="mb-5">shop infinite merch</h2>
+            <div id="my-store-90692754"></div>
+            <div>
+                <script data-cfasync="false" type="text/javascript" src="https://app.shopsettings.com/script.js?90692754&data_platform=code&data_date=2023-08-21" charset="utf-8"></script><script type="text/javascript"> xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-90692754");</script>
+            </div>
+        </div>
+    </section>
+    <!-- end/ section: shop -->
+
+    <!-- start/ section: contact -->
+    <section id="contact" style="height: calc(10rem + 25vw);"></section>
+    <!-- end/ section: contact -->
+
+    <!-- start/ footer -->
+    <footer id="footer" class="text-center">
+        <div class="container text-muted py-4 py-lg-5" style="font-size: .75rem;">
+            <ul class="list-unstyled d-flex d-lg-flex flex-shrink-1 flex-fill justify-content-center flex-wrap justify-content-lg-center" style="font-size: 1.5rem;">
+                <li class="d-flex d-lg-flex justify-content-center align-items-center flex-wrap justify-content-lg-center align-items-lg-center footer-icon-col"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -64 640 640" width="1em" height="1em" fill="currentColor" class="d-flex d-lg-flex justify-content-center align-items-center flex-wrap justify-content-lg-center align-items-lg-center footer-icon">
+                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                        <path d="M111.4 256.3l5.8 65-5.8 68.3c-.3 2.5-2.2 4.4-4.4 4.4s-4.2-1.9-4.2-4.4l-5.6-68.3 5.6-65c0-2.2 1.9-4.2 4.2-4.2 2.2 0 4.1 2 4.4 4.2zm21.4-45.6c-2.8 0-4.7 2.2-5 5l-5 105.6 5 68.3c.3 2.8 2.2 5 5 5 2.5 0 4.7-2.2 4.7-5l5.8-68.3-5.8-105.6c0-2.8-2.2-5-4.7-5zm25.5-24.1c-3.1 0-5.3 2.2-5.6 5.3l-4.4 130 4.4 67.8c.3 3.1 2.5 5.3 5.6 5.3 2.8 0 5.3-2.2 5.3-5.3l5.3-67.8-5.3-130c0-3.1-2.5-5.3-5.3-5.3zM7.2 283.2c-1.4 0-2.2 1.1-2.5 2.5L0 321.3l4.7 35c.3 1.4 1.1 2.5 2.5 2.5s2.2-1.1 2.5-2.5l5.6-35-5.6-35.6c-.3-1.4-1.1-2.5-2.5-2.5zm23.6-21.9c-1.4 0-2.5 1.1-2.5 2.5l-6.4 57.5 6.4 56.1c0 1.7 1.1 2.8 2.5 2.8s2.5-1.1 2.8-2.5l7.2-56.4-7.2-57.5c-.3-1.4-1.4-2.5-2.8-2.5zm25.3-11.4c-1.7 0-3.1 1.4-3.3 3.3L47 321.3l5.8 65.8c.3 1.7 1.7 3.1 3.3 3.1 1.7 0 3.1-1.4 3.1-3.1l6.9-65.8-6.9-68.1c0-1.9-1.4-3.3-3.1-3.3zm25.3-2.2c-1.9 0-3.6 1.4-3.6 3.6l-5.8 70 5.8 67.8c0 2.2 1.7 3.6 3.6 3.6s3.6-1.4 3.9-3.6l6.4-67.8-6.4-70c-.3-2.2-2-3.6-3.9-3.6zm241.4-110.9c-1.1-.8-2.8-1.4-4.2-1.4-2.2 0-4.2.8-5.6 1.9-1.9 1.7-3.1 4.2-3.3 6.7v.8l-3.3 176.7 1.7 32.5 1.7 31.7c.3 4.7 4.2 8.6 8.9 8.6s8.6-3.9 8.6-8.6l3.9-64.2-3.9-177.5c-.4-3-2-5.8-4.5-7.2zm-26.7 15.3c-1.4-.8-2.8-1.4-4.4-1.4s-3.1.6-4.4 1.4c-2.2 1.4-3.6 3.9-3.6 6.7l-.3 1.7-2.8 160.8s0 .3 3.1 65.6v.3c0 1.7.6 3.3 1.7 4.7 1.7 1.9 3.9 3.1 6.4 3.1 2.2 0 4.2-1.1 5.6-2.5 1.7-1.4 2.5-3.3 2.5-5.6l.3-6.7 3.1-58.6-3.3-162.8c-.3-2.8-1.7-5.3-3.9-6.7zm-111.4 22.5c-3.1 0-5.8 2.8-5.8 6.1l-4.4 140.6 4.4 67.2c.3 3.3 2.8 5.8 5.8 5.8 3.3 0 5.8-2.5 6.1-5.8l5-67.2-5-140.6c-.2-3.3-2.7-6.1-6.1-6.1zm376.7 62.8c-10.8 0-21.1 2.2-30.6 6.1-6.4-70.8-65.8-126.4-138.3-126.4-17.8 0-35 3.3-50.3 9.4-6.1 2.2-7.8 4.4-7.8 9.2v249.7c0 5 3.9 8.6 8.6 9.2h218.3c43.3 0 78.6-35 78.6-78.3.1-43.6-35.2-78.9-78.5-78.9zm-296.7-60.3c-4.2 0-7.5 3.3-7.8 7.8l-3.3 136.7 3.3 65.6c.3 4.2 3.6 7.5 7.8 7.5 4.2 0 7.5-3.3 7.5-7.5l3.9-65.6-3.9-136.7c-.3-4.5-3.3-7.8-7.5-7.8zm-53.6-7.8c-3.3 0-6.4 3.1-6.4 6.7l-3.9 145.3 3.9 66.9c.3 3.6 3.1 6.4 6.4 6.4 3.6 0 6.4-2.8 6.7-6.4l4.4-66.9-4.4-145.3c-.3-3.6-3.1-6.7-6.7-6.7zm26.7 3.4c-3.9 0-6.9 3.1-6.9 6.9L227 321.3l3.9 66.4c.3 3.9 3.1 6.9 6.9 6.9s6.9-3.1 6.9-6.9l4.2-66.4-4.2-141.7c0-3.9-3-6.9-6.9-6.9z"></path>
+                    </svg></li>
+                <li class="d-flex d-lg-flex justify-content-center align-items-center flex-wrap justify-content-lg-center align-items-lg-center footer-icon-col"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 0 512 512" width="1em" height="1em" fill="currentColor" class="d-flex d-lg-flex justify-content-center align-items-center flex-wrap justify-content-lg-center align-items-lg-center footer-icon">
+                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                        <path d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 81.9-18.1 165.6-16.5 237 26.2 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15.4-15.2 15.4zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.8-8.5 19.5-19.4 19.5zm31-76.2c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3z"></path>
+                    </svg></li>
+                <li class="d-flex d-lg-flex justify-content-center align-items-center flex-wrap justify-content-lg-center align-items-lg-center footer-icon-col"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-64 0 512 512" width="1em" height="1em" fill="currentColor" class="d-flex justify-content-center align-items-center flex-wrap footer-icon">
+                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                        <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path>
+                    </svg></li>
+                <li class="d-flex d-lg-flex justify-content-center align-items-center flex-wrap justify-content-lg-center align-items-lg-center footer-icon-col"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" class="footer-icon">
+                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                        <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                    </svg></li>
+            </ul>
+            <ul class="list-inline">
+                <li class="list-inline-item me-4"><a class="link-secondary" href="#">Web design</a></li>
+                <li class="list-inline-item text-secondary me-4"><a class="link-secondary" href="#">Development</a></li>
+                <li class="list-inline-item text-secondary"><a class="link-secondary" href="#">Hosting</a></li>
+            </ul>
+            <p class="mb-0">Copyright © 2023 The Infinite Road</p>
+        </div>
+    </footer>
+    <!-- end/ footer -->
+
+    <script>
+        $(document).ready(function () {
+          $(window).scroll(function () {
+            // Get the position of the "music_video" section
+            var musicVideoPosition = $('#music_video').offset().top;
+      
+            // Check if the user has scrolled to the "music_video" section
+            if ($(window).scrollTop() >= musicVideoPosition) {
+              // Remove the 'hide' class to reveal the navbar
+              $('nav').removeClass('hide');
+              // Apply a fade-in effect
+              $('nav').css('opacity', '1');
+            } else {
+              // Hide the navbar when user scrolls back to "splash" section
+              $('nav').addClass('hide');
+              $('nav').css('opacity', '0');
+            }
+          });
+        });
+    </script>      
+      
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/jQueryv3.4.1.js"></script>
+    <script src="assets/js/musicPlayer.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/visualizer.js"></script>
+</body>
+
+</html>
