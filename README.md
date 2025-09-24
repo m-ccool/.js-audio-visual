@@ -11,6 +11,6 @@ tap moving audio icon in the upper left hand corner to begin music
 
 🎧⚠️ ( caution: high audio levels )
 
-🔗 deployed: https://m-ccool.github.io/infinity_road/ 🔗
+🔗 deployed: [ github pages site ](https://m-ccool.github.io/.js-audio-visual/) 🔗
 
 
